@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | [Your Name]</title>
+  <title>Portfolio | Muhammad Pikih</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,7 +38,10 @@
   <!-- Navbar -->
   <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500">
     <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="font-space text-2xl font-bold text-primary logo-glow">&lt;YN /&gt;</a>
+      <a href="#" class="flex items-center gap-2">
+        <img src="assets/img/profile.jpeg" alt="Muhammad Pikih" class="w-9 h-9 rounded-full object-cover border-2 border-primary" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+        <span class="font-space text-2xl font-bold text-primary logo-glow" style="display:none">&lt;MP /&gt;</span>
+      </a>
       <ul class="hidden md:flex gap-8 text-sm font-semibold">
         <li><a href="#about" class="nav-link hover:text-primary transition">About</a></li>
         <li><a href="#skills" class="nav-link hover:text-primary transition">Skills</a></li>
@@ -64,7 +67,7 @@
     <div class="hero-content">
       <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-4 fade-up">Hello, World! 👋</p>
       <h1 class="text-5xl md:text-7xl font-black font-space leading-tight mb-4 fade-up delay-1">
-        Saya <span class="gradient-text">[Your Name]</span>
+        Saya <span class="gradient-text">Muhammad Pikih</span>
       </h1>
       <div class="text-xl md:text-2xl text-gray-400 mb-8 fade-up delay-2">
         <span>Seorang </span><span id="typed-text" class="text-primary font-bold"></span><span id="typed-cursor" class="text-primary">|</span>
@@ -98,7 +101,8 @@
         <div class="relative w-72 h-72 mx-auto">
           <div class="avatar-ring absolute inset-0 rounded-full"></div>
           <div class="w-64 h-64 rounded-full overflow-hidden mx-auto mt-4 border-4 border-primary">
-            <div class="w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-7xl">👨‍💻</div>
+            <img src="assets/img/profile.jpeg" alt="Muhammad Pikih" class="w-full h-full object-cover"
+              onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-7xl\'>👨‍💻</div>'" />
           </div>
           <div class="floating-badge absolute -bottom-2 -right-2 bg-card border border-primary px-4 py-2 rounded-full text-sm font-semibold text-primary">
             <i class="fas fa-star text-yellow-400 mr-1"></i> Available for Work
@@ -109,23 +113,23 @@
         <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Tentang Saya</p>
         <h2 class="text-4xl font-black font-space mb-6">Siapa <span class="gradient-text">Saya?</span></h2>
         <p class="text-gray-400 mb-4 leading-relaxed">
-          Saya adalah seorang <span class="text-white font-semibold">Full Stack Developer</span> dengan pengalaman membangun aplikasi web modern yang scalable dan user-friendly. Saya percaya bahwa kode yang baik adalah kode yang bisa dibaca dan dipahami oleh semua orang.
+          Saya adalah seorang <span class="text-white font-semibold">Web Developer</span> yang fokus membangun aplikasi web yang fungsional, rapi, dan mudah digunakan. Saya percaya bahwa kode yang baik adalah kode yang bisa dibaca dan dipahami oleh semua orang.
         </p>
         <p class="text-gray-400 mb-8 leading-relaxed">
           Ketika tidak coding, saya suka eksplorasi teknologi baru, berkontribusi ke open source, dan berbagi ilmu dengan komunitas developer.
         </p>
         <div class="grid grid-cols-2 gap-4 mb-8">
           <div class="stat-card p-4 rounded-xl bg-card border border-gray-800 text-center">
-            <div class="text-3xl font-black text-primary counter" data-target="50">0</div>
+            <div class="text-3xl font-black text-primary counter" data-target="1">0</div>
             <div class="text-gray-400 text-sm mt-1">Projects Selesai</div>
           </div>
           <div class="stat-card p-4 rounded-xl bg-card border border-gray-800 text-center">
-            <div class="text-3xl font-black text-secondary counter" data-target="3">0</div>
-            <div class="text-gray-400 text-sm mt-1">Tahun Pengalaman</div>
+            <div class="text-3xl font-black text-secondary counter" data-target="7">0</div>
+            <div class="text-gray-400 text-sm mt-1">Bulan Magang</div>
           </div>
           <div class="stat-card p-4 rounded-xl bg-card border border-gray-800 text-center">
-            <div class="text-3xl font-black text-accent counter" data-target="20">0</div>
-            <div class="text-gray-400 text-sm mt-1">Klien Puas</div>
+            <div class="text-3xl font-black text-accent counter" data-target="11">0</div>
+            <div class="text-gray-400 text-sm mt-1">Tech Stack</div>
           </div>
           <div class="stat-card p-4 rounded-xl bg-card border border-gray-800 text-center">
             <div class="text-3xl font-black text-yellow-400 counter" data-target="100">0</div>
@@ -147,11 +151,10 @@
         <h2 class="text-4xl font-black font-space">Tech <span class="gradient-text">Stack</span></h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-        <!-- Skill Cards -->
         <div class="skill-card reveal" data-delay="0">
           <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-primary transition-all duration-300 group">
-            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">⚛️</div>
-            <div class="font-semibold">React.js</div>
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🟨</div>
+            <div class="font-semibold">JavaScript</div>
             <div class="text-gray-500 text-xs mt-1">Frontend</div>
           </div>
         </div>
@@ -164,44 +167,65 @@
         </div>
         <div class="skill-card reveal" data-delay="200">
           <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-primary transition-all duration-300 group">
-            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🐍</div>
-            <div class="font-semibold">Python</div>
-            <div class="text-gray-500 text-xs mt-1">Backend / AI</div>
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🌐</div>
+            <div class="font-semibold">HTML5</div>
+            <div class="text-gray-500 text-xs mt-1">Markup</div>
           </div>
         </div>
         <div class="skill-card reveal" data-delay="300">
           <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-primary transition-all duration-300 group">
-            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🗄️</div>
-            <div class="font-semibold">PostgreSQL</div>
-            <div class="text-gray-500 text-xs mt-1">Database</div>
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎨</div>
+            <div class="font-semibold">CSS3</div>
+            <div class="text-gray-500 text-xs mt-1">Styling</div>
           </div>
         </div>
         <div class="skill-card reveal" data-delay="0">
           <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-secondary transition-all duration-300 group">
-            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🎨</div>
-            <div class="font-semibold">Tailwind CSS</div>
-            <div class="text-gray-500 text-xs mt-1">Styling</div>
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🐘</div>
+            <div class="font-semibold">PHP</div>
+            <div class="text-gray-500 text-xs mt-1">Backend</div>
           </div>
         </div>
         <div class="skill-card reveal" data-delay="100">
           <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-secondary transition-all duration-300 group">
-            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🐳</div>
-            <div class="font-semibold">Docker</div>
-            <div class="text-gray-500 text-xs mt-1">DevOps</div>
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🔴</div>
+            <div class="font-semibold">Laravel</div>
+            <div class="text-gray-500 text-xs mt-1">Framework</div>
           </div>
         </div>
         <div class="skill-card reveal" data-delay="200">
-          <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-accent transition-all duration-300 group">
-            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">☁️</div>
-            <div class="font-semibold">AWS</div>
-            <div class="text-gray-500 text-xs mt-1">Cloud</div>
+          <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-secondary transition-all duration-300 group">
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">�</div>
+            <div class="font-semibold">CodeIgniter</div>
+            <div class="text-gray-500 text-xs mt-1">Framework</div>
           </div>
         </div>
         <div class="skill-card reveal" data-delay="300">
           <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-accent transition-all duration-300 group">
-            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🔧</div>
-            <div class="font-semibold">Git & CI/CD</div>
-            <div class="text-gray-500 text-xs mt-1">Tools</div>
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🗄️</div>
+            <div class="font-semibold">MySQL</div>
+            <div class="text-gray-500 text-xs mt-1">Database</div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-delay="0">
+          <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-accent transition-all duration-300 group">
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🏢</div>
+            <div class="font-semibold">SQL Server</div>
+            <div class="text-gray-500 text-xs mt-1">Database</div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-delay="100">
+          <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-accent transition-all duration-300 group">
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">�</div>
+            <div class="font-semibold">Tailwind CSS</div>
+            <div class="text-gray-500 text-xs mt-1">Styling</div>
+          </div>
+        </div>
+        <div class="skill-card reveal" data-delay="200">
+          <div class="p-6 rounded-2xl bg-card border border-gray-800 text-center hover:border-primary transition-all duration-300 group">
+            <div class="text-5xl mb-3 group-hover:scale-110 transition-transform">🅱️</div>
+            <div class="font-semibold">Bootstrap</div>
+            <div class="text-gray-500 text-xs mt-1">Styling</div>
           </div>
         </div>
       </div>
@@ -209,30 +233,30 @@
       <div class="grid md:grid-cols-2 gap-8 reveal">
         <div>
           <div class="mb-5">
-            <div class="flex justify-between mb-2"><span class="font-semibold">Frontend Development</span><span class="text-primary">90%</span></div>
+            <div class="flex justify-between mb-2"><span class="font-semibold">HTML & CSS</span><span class="text-primary">90%</span></div>
             <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="90"></div></div>
           </div>
           <div class="mb-5">
-            <div class="flex justify-between mb-2"><span class="font-semibold">Backend Development</span><span class="text-primary">85%</span></div>
-            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="85"></div></div>
+            <div class="flex justify-between mb-2"><span class="font-semibold">JavaScript</span><span class="text-primary">80%</span></div>
+            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="80"></div></div>
           </div>
           <div class="mb-5">
-            <div class="flex justify-between mb-2"><span class="font-semibold">UI/UX Design</span><span class="text-primary">75%</span></div>
-            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="75"></div></div>
+            <div class="flex justify-between mb-2"><span class="font-semibold">PHP / Laravel / CodeIgniter</span><span class="text-primary">85%</span></div>
+            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-primary to-secondary rounded-full" data-width="85"></div></div>
           </div>
         </div>
         <div>
           <div class="mb-5">
-            <div class="flex justify-between mb-2"><span class="font-semibold">Database Management</span><span class="text-accent">80%</span></div>
+            <div class="flex justify-between mb-2"><span class="font-semibold">MySQL & SQL Server</span><span class="text-accent">80%</span></div>
             <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-accent to-primary rounded-full" data-width="80"></div></div>
           </div>
           <div class="mb-5">
-            <div class="flex justify-between mb-2"><span class="font-semibold">DevOps & Cloud</span><span class="text-accent">70%</span></div>
-            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-accent to-primary rounded-full" data-width="70"></div></div>
+            <div class="flex justify-between mb-2"><span class="font-semibold">Tailwind & Bootstrap</span><span class="text-accent">85%</span></div>
+            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-accent to-primary rounded-full" data-width="85"></div></div>
           </div>
           <div class="mb-5">
-            <div class="flex justify-between mb-2"><span class="font-semibold">Mobile Development</span><span class="text-accent">65%</span></div>
-            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-accent to-primary rounded-full" data-width="65"></div></div>
+            <div class="flex justify-between mb-2"><span class="font-semibold">Node.js</span><span class="text-accent">75%</span></div>
+            <div class="h-2 bg-gray-800 rounded-full overflow-hidden"><div class="skill-bar h-full bg-gradient-to-r from-accent to-primary rounded-full" data-width="75"></div></div>
           </div>
         </div>
       </div>
@@ -250,127 +274,27 @@
       <div class="flex gap-3 justify-center flex-wrap mb-12 reveal">
         <button class="filter-btn active px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="all">Semua</button>
         <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="web">Web App</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="mobile">Mobile</button>
-        <button class="filter-btn px-5 py-2 rounded-full text-sm font-semibold transition" data-filter="ui">UI/UX</button>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
-        <!-- Project Card 1 -->
+        <!-- Project: Kelurahan App -->
         <div class="project-card reveal" data-category="web">
           <div class="rounded-2xl overflow-hidden bg-card border border-gray-800 hover:border-primary transition-all duration-300 group">
-            <div class="h-48 bg-gradient-to-br from-primary/30 to-secondary/30 relative overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">🛒</div>
+            <div class="h-48 bg-gradient-to-br from-primary/30 to-accent/30 relative overflow-hidden">
+              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">🏛️</div>
               <div class="project-overlay absolute inset-0 bg-primary/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <a href="#" class="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition"><i class="fas fa-eye"></i></a>
                 <a href="#" class="w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center hover:scale-110 transition"><i class="fab fa-github"></i></a>
               </div>
             </div>
             <div class="p-6">
-              <div class="flex gap-2 mb-3">
-                <span class="px-2 py-1 rounded-full bg-primary/20 text-primary text-xs">React</span>
-                <span class="px-2 py-1 rounded-full bg-secondary/20 text-secondary text-xs">Node.js</span>
+              <div class="flex gap-2 mb-3 flex-wrap">
+                <span class="px-2 py-1 rounded-full bg-primary/20 text-primary text-xs">PHP</span>
+                <span class="px-2 py-1 rounded-full bg-secondary/20 text-secondary text-xs">Laravel</span>
+                <span class="px-2 py-1 rounded-full bg-accent/20 text-accent text-xs">MySQL</span>
+                <span class="px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs">Bootstrap</span>
               </div>
-              <h3 class="font-bold text-lg mb-2">E-Commerce Platform</h3>
-              <p class="text-gray-400 text-sm">Platform belanja online dengan fitur real-time inventory, payment gateway, dan dashboard admin.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 2 -->
-        <div class="project-card reveal delay-1" data-category="web">
-          <div class="rounded-2xl overflow-hidden bg-card border border-gray-800 hover:border-secondary transition-all duration-300 group">
-            <div class="h-48 bg-gradient-to-br from-secondary/30 to-accent/30 relative overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">📊</div>
-              <div class="project-overlay absolute inset-0 bg-secondary/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-secondary flex items-center justify-center hover:scale-110 transition"><i class="fas fa-eye"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-secondary flex items-center justify-center hover:scale-110 transition"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex gap-2 mb-3">
-                <span class="px-2 py-1 rounded-full bg-accent/20 text-accent text-xs">Python</span>
-                <span class="px-2 py-1 rounded-full bg-primary/20 text-primary text-xs">FastAPI</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Analytics Dashboard</h3>
-              <p class="text-gray-400 text-sm">Dashboard analitik real-time dengan visualisasi data interaktif dan laporan otomatis.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 3 -->
-        <div class="project-card reveal delay-2" data-category="mobile">
-          <div class="rounded-2xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 group">
-            <div class="h-48 bg-gradient-to-br from-accent/30 to-primary/30 relative overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">📱</div>
-              <div class="project-overlay absolute inset-0 bg-accent/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-accent flex items-center justify-center hover:scale-110 transition"><i class="fas fa-eye"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-accent flex items-center justify-center hover:scale-110 transition"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex gap-2 mb-3">
-                <span class="px-2 py-1 rounded-full bg-primary/20 text-primary text-xs">React Native</span>
-                <span class="px-2 py-1 rounded-full bg-secondary/20 text-secondary text-xs">Firebase</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Finance Tracker App</h3>
-              <p class="text-gray-400 text-sm">Aplikasi mobile untuk tracking keuangan pribadi dengan AI-powered insights.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 4 -->
-        <div class="project-card reveal" data-category="ui">
-          <div class="rounded-2xl overflow-hidden bg-card border border-gray-800 hover:border-primary transition-all duration-300 group">
-            <div class="h-48 bg-gradient-to-br from-purple-500/30 to-pink-500/30 relative overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">🎨</div>
-              <div class="project-overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-purple-600 flex items-center justify-center hover:scale-110 transition"><i class="fas fa-eye"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-purple-600 flex items-center justify-center hover:scale-110 transition"><i class="fab fa-figma"></i></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex gap-2 mb-3">
-                <span class="px-2 py-1 rounded-full bg-purple-500/20 text-purple-400 text-xs">Figma</span>
-                <span class="px-2 py-1 rounded-full bg-pink-500/20 text-pink-400 text-xs">UI/UX</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">SaaS Design System</h3>
-              <p class="text-gray-400 text-sm">Design system lengkap untuk produk SaaS dengan 200+ komponen yang konsisten.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 5 -->
-        <div class="project-card reveal delay-1" data-category="web">
-          <div class="rounded-2xl overflow-hidden bg-card border border-gray-800 hover:border-secondary transition-all duration-300 group">
-            <div class="h-48 bg-gradient-to-br from-blue-500/30 to-cyan-500/30 relative overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">🤖</div>
-              <div class="project-overlay absolute inset-0 bg-blue-600/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition"><i class="fas fa-eye"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-blue-600 flex items-center justify-center hover:scale-110 transition"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex gap-2 mb-3">
-                <span class="px-2 py-1 rounded-full bg-blue-500/20 text-blue-400 text-xs">Python</span>
-                <span class="px-2 py-1 rounded-full bg-cyan-500/20 text-cyan-400 text-xs">OpenAI</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">AI Chatbot Platform</h3>
-              <p class="text-gray-400 text-sm">Platform chatbot berbasis AI untuk customer service dengan integrasi multi-channel.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 6 -->
-        <div class="project-card reveal delay-2" data-category="mobile">
-          <div class="rounded-2xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 group">
-            <div class="h-48 bg-gradient-to-br from-orange-500/30 to-red-500/30 relative overflow-hidden">
-              <div class="absolute inset-0 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-500">🍔</div>
-              <div class="project-overlay absolute inset-0 bg-orange-600/90 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-orange-600 flex items-center justify-center hover:scale-110 transition"><i class="fas fa-eye"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-white text-orange-600 flex items-center justify-center hover:scale-110 transition"><i class="fab fa-github"></i></a>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex gap-2 mb-3">
-                <span class="px-2 py-1 rounded-full bg-orange-500/20 text-orange-400 text-xs">Flutter</span>
-                <span class="px-2 py-1 rounded-full bg-red-500/20 text-red-400 text-xs">Dart</span>
-              </div>
-              <h3 class="font-bold text-lg mb-2">Food Delivery App</h3>
-              <p class="text-gray-400 text-sm">Aplikasi pesan antar makanan dengan real-time tracking dan sistem rating.</p>
+              <h3 class="font-bold text-lg mb-2">Kelurahan App</h3>
+              <p class="text-gray-400 text-sm">Sistem informasi manajemen kelurahan berbasis web untuk pengelolaan data warga, surat menyurat, dan administrasi kelurahan secara digital.</p>
             </div>
           </div>
         </div>
@@ -390,97 +314,28 @@
           <div class="timeline-dot bg-primary"></div>
           <div class="timeline-content bg-card border border-gray-800 rounded-2xl p-6 hover:border-primary transition">
             <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
-              <h3 class="font-bold text-lg">Senior Frontend Developer</h3>
-              <span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold">2023 - Sekarang</span>
+              <h3 class="font-bold text-lg">System Development (SD) — Magang</h3>
+              <span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold">Nov 2024 – Mei 2025</span>
             </div>
-            <p class="text-secondary font-semibold text-sm mb-3">PT. Tech Innovate Indonesia</p>
-            <p class="text-gray-400 text-sm">Memimpin tim frontend dalam pengembangan aplikasi SaaS dengan 50k+ pengguna aktif. Meningkatkan performa aplikasi hingga 40%.</p>
+            <p class="text-secondary font-semibold text-sm mb-3">PT. Denso Manufacturing Indonesia</p>
+            <p class="text-gray-400 text-sm">Terlibat dalam pengembangan sistem internal perusahaan selama 7 bulan. Berkontribusi pada pembuatan dan pemeliharaan aplikasi berbasis web menggunakan PHP, SQL Server, dan tools pengembangan sistem lainnya.</p>
           </div>
         </div>
         <div class="timeline-item reveal delay-1">
-          <div class="timeline-dot bg-secondary"></div>
-          <div class="timeline-content bg-card border border-gray-800 rounded-2xl p-6 hover:border-secondary transition">
-            <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
-              <h3 class="font-bold text-lg">Full Stack Developer</h3>
-              <span class="px-3 py-1 rounded-full bg-secondary/20 text-secondary text-xs font-semibold">2021 - 2023</span>
-            </div>
-            <p class="text-secondary font-semibold text-sm mb-3">Startup Digital XYZ</p>
-            <p class="text-gray-400 text-sm">Membangun platform e-commerce dari nol hingga launch dengan 10k+ transaksi per bulan menggunakan React dan Node.js.</p>
-          </div>
-        </div>
-        <div class="timeline-item reveal delay-2">
-          <div class="timeline-dot bg-accent"></div>
-          <div class="timeline-content bg-card border border-gray-800 rounded-2xl p-6 hover:border-accent transition">
-            <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
-              <h3 class="font-bold text-lg">Junior Web Developer</h3>
-              <span class="px-3 py-1 rounded-full bg-accent/20 text-accent text-xs font-semibold">2020 - 2021</span>
-            </div>
-            <p class="text-accent font-semibold text-sm mb-3">Freelance & Agency</p>
-            <p class="text-gray-400 text-sm">Mengerjakan 15+ proyek website untuk klien lokal dan internasional, dari landing page hingga web app.</p>
-          </div>
-        </div>
-        <div class="timeline-item reveal delay-3">
           <div class="timeline-dot bg-yellow-400"></div>
           <div class="timeline-content bg-card border border-gray-800 rounded-2xl p-6 hover:border-yellow-400 transition">
             <div class="flex justify-between items-start flex-wrap gap-2 mb-2">
               <h3 class="font-bold text-lg">S1 Teknik Informatika</h3>
-              <span class="px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-400 text-xs font-semibold">2016 - 2020</span>
+              <span class="px-3 py-1 rounded-full bg-yellow-400/20 text-yellow-400 text-xs font-semibold">Lulus 2025</span>
             </div>
-            <p class="text-yellow-400 font-semibold text-sm mb-3">Universitas [Nama Universitas]</p>
-            <p class="text-gray-400 text-sm">Lulus dengan IPK 3.8/4.0. Aktif di organisasi mahasiswa dan memenangkan beberapa kompetisi programming.</p>
+            <p class="text-yellow-400 font-semibold text-sm mb-3">Universitas Bani Saleh</p>
+            <p class="text-gray-400 text-sm">Lulus dengan IPK 7,73. Fokus pada pengembangan web dan sistem informasi.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials -->
-  <section class="relative z-10 py-24 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center mb-16 reveal">
-        <p class="text-accent text-sm font-semibold tracking-widest uppercase mb-3">Testimoni</p>
-        <h2 class="text-4xl font-black font-space">Kata <span class="gradient-text">Mereka</span></h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="reveal p-6 rounded-2xl bg-card border border-gray-800 hover:border-primary transition relative">
-          <div class="text-4xl text-primary mb-4">"</div>
-          <p class="text-gray-400 text-sm mb-6 leading-relaxed">Developer yang sangat profesional dan komunikatif. Hasil kerjanya melebihi ekspektasi kami. Sangat direkomendasikan!</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center font-bold">A</div>
-            <div>
-              <div class="font-semibold text-sm">Ahmad Fauzi</div>
-              <div class="text-gray-500 text-xs">CEO, PT. Digital Maju</div>
-            </div>
-          </div>
-          <div class="flex gap-1 mt-4 text-yellow-400 text-sm">★★★★★</div>
-        </div>
-        <div class="reveal delay-1 p-6 rounded-2xl bg-card border border-gray-800 hover:border-secondary transition relative">
-          <div class="text-4xl text-secondary mb-4">"</div>
-          <p class="text-gray-400 text-sm mb-6 leading-relaxed">Kode yang ditulis sangat clean dan well-documented. Proyek selesai tepat waktu dengan kualitas yang luar biasa.</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-secondary to-accent flex items-center justify-center font-bold">S</div>
-            <div>
-              <div class="font-semibold text-sm">Siti Rahayu</div>
-              <div class="text-gray-500 text-xs">CTO, Startup Fintech</div>
-            </div>
-          </div>
-          <div class="flex gap-1 mt-4 text-yellow-400 text-sm">★★★★★</div>
-        </div>
-        <div class="reveal delay-2 p-6 rounded-2xl bg-card border border-gray-800 hover:border-accent transition relative">
-          <div class="text-4xl text-accent mb-4">"</div>
-          <p class="text-gray-400 text-sm mb-6 leading-relaxed">Sangat kreatif dalam problem solving. Berhasil meningkatkan performa website kami hingga 3x lebih cepat.</p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center font-bold">B</div>
-            <div>
-              <div class="font-semibold text-sm">Budi Santoso</div>
-              <div class="text-gray-500 text-xs">Product Manager, Tech Corp</div>
-            </div>
-          </div>
-          <div class="flex gap-1 mt-4 text-yellow-400 text-sm">★★★★★</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Contact -->
   <section id="contact" class="relative z-10 py-24 px-6 bg-card/30">
@@ -499,7 +354,7 @@
               </div>
               <div>
                 <div class="text-gray-400 text-xs">Email</div>
-                <div class="font-semibold">[email]@gmail.com</div>
+                <div class="font-semibold">muhammadpikih@gmail.com</div>
               </div>
             </div>
             <div class="flex items-center gap-4 p-4 rounded-xl bg-card border border-gray-800 hover:border-secondary transition group">
@@ -508,7 +363,7 @@
               </div>
               <div>
                 <div class="text-gray-400 text-xs">Phone / WhatsApp</div>
-                <div class="font-semibold">+62 [phone_number]</div>
+                <div class="font-semibold">+62 088211450987</div>
               </div>
             </div>
             <div class="flex items-center gap-4 p-4 rounded-xl bg-card border border-gray-800 hover:border-accent transition group">
@@ -517,7 +372,7 @@
               </div>
               <div>
                 <div class="text-gray-400 text-xs">Lokasi</div>
-                <div class="font-semibold">Jakarta, Indonesia</div>
+                <div class="font-semibold">Bekasi, Jawa Barat, Indonesia</div>
               </div>
             </div>
           </div>
@@ -548,7 +403,7 @@
   <!-- Footer -->
   <footer class="relative z-10 py-8 px-6 border-t border-gray-800 text-center">
     <p class="text-gray-500 text-sm">
-      Dibuat dengan <span class="text-secondary">❤️</span> oleh <span class="text-primary font-semibold">[Your Name]</span> &copy; 2024
+      Dibuat dengan <span class="text-secondary">❤️</span> oleh <span class="text-primary font-semibold">Muhammad Pikih</span> &copy; 2025
     </p>
   </footer>
 
@@ -560,3 +415,4 @@
   <script src="assets/js/main.js"></script>
 </body>
 </html>
+

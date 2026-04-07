@@ -128,7 +128,7 @@ document.querySelectorAll('#mobile-menu a').forEach(a => {
 });
 
 // ===== TYPED TEXT =====
-const phrases = ['Full Stack Developer', 'UI/UX Enthusiast', 'Problem Solver', 'Open Source Contributor', 'Tech Innovator'];
+const phrases = ['Web Developer', 'PHP Developer', 'Laravel Developer', 'Frontend Developer', 'Fresh Graduate'];
 let phraseIdx = 0, charIdx = 0, isDeleting = false;
 const typedEl = document.getElementById('typed-text');
 
