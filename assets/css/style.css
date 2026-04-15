@@ -1,242 +1,420 @@
-/* ===== BASE ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+/* ============================================================
+   FILE: assets/css/style.css
+   FUNGSI: Semua styling custom dan animasi untuk portfolio
+   ============================================================ */
 
-/* ===== CUSTOM CURSOR ===== */
+
+/* ============================================================
+   1. BASE — Reset dasar agar tampilan konsisten di semua browser
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box; /* ukuran elemen sudah termasuk padding & border */
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth; /* scroll halus saat klik link anchor */
+}
+
+
+/* ============================================================
+   2. CUSTOM CURSOR — Mengganti kursor bawaan browser
+   ============================================================ */
+
+/* Titik kecil yang langsung mengikuti mouse */
 .cursor {
-  width: 10px; height: 10px;
+  width: 10px;
+  height: 10px;
   background: #6C63FF;
-  border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9999;
-  transform: translate(-50%, -50%);
+  border-radius: 50%;           /* bentuk bulat */
+  position: fixed;              /* posisi tetap di layar */
+  top: 0; left: 0;
+  pointer-events: none;         /* tidak mengganggu klik */
+  z-index: 9999;                /* selalu di atas semua elemen */
+  transform: translate(-50%, -50%); /* titik tengah tepat di posisi mouse */
   transition: transform 0.1s;
 }
+
+/* Lingkaran besar yang mengikuti mouse dengan delay (efek lag) */
 .cursor-follower {
-  width: 36px; height: 36px;
+  width: 36px;
+  height: 36px;
   border: 2px solid rgba(108,99,255,0.5);
   border-radius: 50%;
-  position: fixed; top: 0; left: 0;
-  pointer-events: none; z-index: 9998;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9998;
   transform: translate(-50%, -50%);
   transition: all 0.15s ease;
 }
-body:hover .cursor { transform: translate(-50%, -50%) scale(1); }
 
-/* ===== GRADIENT TEXT ===== */
+
+/* ============================================================
+   3. GRADIENT TEXT — Teks dengan warna gradasi bergerak
+   ============================================================ */
 .gradient-text {
   background: linear-gradient(135deg, #6C63FF, #FF6584, #43E97B);
-  -webkit-background-clip: text;
+  -webkit-background-clip: text;    /* teks jadi "jendela" untuk melihat background */
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-size: 200% 200%;
-  animation: gradientShift 4s ease infinite;
+  background-size: 200% 200%;       /* background lebih besar agar bisa digeser */
+  animation: gradientShift 4s ease infinite; /* animasi geser warna terus-menerus */
 }
+
+/* Keyframe: menggeser posisi background dari kiri ke kanan */
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* ===== NAVBAR ===== */
+
+/* ============================================================
+   4. NAVBAR — Tampilan navbar berubah saat halaman di-scroll
+   ============================================================ */
+
+/* Class 'scrolled' ditambahkan via JS saat scroll > 50px */
 #navbar.scrolled {
-  background: rgba(13,13,26,0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(13,13,26,0.95);      /* background gelap semi-transparan */
+  backdrop-filter: blur(20px);          /* efek blur di belakang navbar */
   border-bottom: 1px solid rgba(108,99,255,0.2);
   box-shadow: 0 4px 30px rgba(108,99,255,0.1);
 }
-.logo-glow { text-shadow: 0 0 20px rgba(108,99,255,0.8); }
+
+/* Efek glow pada logo teks */
+.logo-glow {
+  text-shadow: 0 0 20px rgba(108,99,255,0.8);
+}
+
+/* Garis bawah yang muncul saat hover pada link navbar */
 .nav-link { position: relative; }
 .nav-link::after {
   content: '';
-  position: absolute; bottom: -4px; left: 0;
-  width: 0; height: 2px;
+  position: absolute;
+  bottom: -4px; left: 0;
+  width: 0;                   /* awalnya tidak terlihat (lebar 0) */
+  height: 2px;
   background: #6C63FF;
   transition: width 0.3s ease;
 }
-.nav-link:hover::after { width: 100%; }
+.nav-link:hover::after {
+  width: 100%;                /* saat hover, garis melebar penuh */
+}
 
-/* ===== BUTTONS ===== */
+
+/* ============================================================
+   5. BUTTONS — Efek cahaya (glow) pada tombol
+   ============================================================ */
 .btn-glow {
   box-shadow: 0 0 20px rgba(108,99,255,0.4);
   transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
-.btn-glow:hover { box-shadow: 0 0 40px rgba(108,99,255,0.7); }
+.btn-glow:hover {
+  box-shadow: 0 0 40px rgba(108,99,255,0.7); /* cahaya lebih terang saat hover */
+}
 
-/* ===== HERO ANIMATIONS ===== */
-.fade-up { opacity: 0; transform: translateY(40px); animation: fadeUp 0.8s ease forwards; }
+
+/* ============================================================
+   6. HERO ANIMATIONS — Animasi muncul dari bawah saat halaman dibuka
+   ============================================================ */
+
+/* Semua elemen dengan class 'fade-up' mulai dari posisi bawah & transparan */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards; /* 'forwards' = tetap di posisi akhir */
+}
+
+/* Delay bertingkat agar elemen muncul satu per satu */
 .delay-1 { animation-delay: 0.2s; }
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 .delay-4 { animation-delay: 0.8s; }
 .delay-5 { animation-delay: 1s; }
+
+/* Keyframe: bergerak dari bawah ke posisi normal sambil muncul */
 @keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* ===== SCROLL INDICATOR ===== */
-.scroll-bounce { animation: bounce 2s infinite; }
+
+/* ============================================================
+   7. SCROLL INDICATOR — Panah/titik yang memantul di hero
+   ============================================================ */
+
+/* Animasi naik-turun untuk container scroll indicator */
+.scroll-bounce {
+  animation: bounce 2s infinite;
+}
 @keyframes bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
+  50%       { transform: translateX(-50%) translateY(-10px); }
 }
-.scroll-dot { animation: scrollDot 2s infinite; }
+
+/* Animasi titik yang bergerak ke bawah di dalam kotak scroll */
+.scroll-dot {
+  animation: scrollDot 2s infinite;
+}
 @keyframes scrollDot {
-  0% { transform: translateY(0); opacity: 1; }
+  0%   { transform: translateY(0);   opacity: 1; }
   100% { transform: translateY(12px); opacity: 0; }
 }
 
-/* ===== REVEAL ON SCROLL ===== */
+
+/* ============================================================
+   8. REVEAL ON SCROLL — Elemen muncul saat di-scroll ke sana
+   ============================================================ */
+
+/* Kondisi awal: tersembunyi di bawah */
 .reveal {
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
+
+/* Kondisi setelah terlihat (class 'visible' ditambahkan via JS) */
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Delay bertingkat untuk reveal agar tidak muncul bersamaan */
 .reveal.delay-1 { transition-delay: 0.15s; }
 .reveal.delay-2 { transition-delay: 0.3s; }
 .reveal.delay-3 { transition-delay: 0.45s; }
 .reveal.delay-4 { transition-delay: 0.6s; }
 .reveal.delay-5 { transition-delay: 0.75s; }
 
-/* ===== AVATAR RING ===== */
+
+/* ============================================================
+   9. AVATAR RING — Cincin berputar di sekitar foto profil
+   ============================================================ */
 .avatar-ring {
+  /* conic-gradient: warna berputar seperti roda warna */
   background: conic-gradient(#6C63FF, #FF6584, #43E97B, #6C63FF);
-  animation: spin 4s linear infinite;
+  animation: spin 4s linear infinite; /* berputar terus */
   border-radius: 50%;
   padding: 3px;
 }
-@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
 
-/* ===== FLOATING BADGE ===== */
-.floating-badge { animation: float 3s ease-in-out infinite; }
+
+/* ============================================================
+   10. FLOATING BADGE — Badge "Available for Work" yang melayang
+   ============================================================ */
+.floating-badge {
+  animation: float 3s ease-in-out infinite;
+}
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  50%       { transform: translateY(-8px); } /* naik 8px lalu turun lagi */
 }
 
-/* ===== STAT CARDS ===== */
-.stat-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+/* ============================================================
+   11. STAT CARDS — Kartu statistik (projects, pengalaman, dll)
+   ============================================================ */
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(108,99,255,0.2);
+  transform: translateY(-5px);                          /* naik sedikit */
+  box-shadow: 0 10px 30px rgba(108,99,255,0.2);         /* bayangan muncul */
 }
 
-/* ===== SKILL BARS ===== */
-.skill-bar { width: 0; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* ===== FILTER BUTTONS ===== */
+/* ============================================================
+   12. SKILL BARS — Progress bar keahlian
+   ============================================================ */
+.skill-bar {
+  width: 0; /* awalnya 0, lebar diubah via JS saat terlihat */
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); /* animasi melebar halus */
+}
+
+
+/* ============================================================
+   13. FILTER BUTTONS — Tombol filter project
+   ============================================================ */
 .filter-btn {
   background: transparent;
   border: 1px solid rgba(108,99,255,0.3);
   color: #9ca3af;
   cursor: pointer;
 }
-.filter-btn:hover, .filter-btn.active {
+/* Saat hover atau aktif: background jadi ungu */
+.filter-btn:hover,
+.filter-btn.active {
   background: #6C63FF;
   border-color: #6C63FF;
   color: white;
 }
 
-/* ===== PROJECT CARDS ===== */
-.project-card { transition: transform 0.3s ease; }
-.project-card:hover { transform: translateY(-8px); }
-.project-card.hidden { display: none; }
 
-/* ===== TIMELINE ===== */
-.timeline { position: relative; padding-left: 40px; }
+/* ============================================================
+   14. PROJECT CARDS — Kartu project naik saat di-hover
+   ============================================================ */
+.project-card {
+  transition: transform 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-8px); /* naik 8px */
+}
+.project-card.hidden {
+  display: none; /* disembunyikan saat filter aktif */
+}
+
+
+/* ============================================================
+   15. TIMELINE — Garis waktu pengalaman & pendidikan
+   ============================================================ */
+
+/* Container timeline dengan garis vertikal di kiri */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
 .timeline::before {
   content: '';
-  position: absolute; left: 12px; top: 0; bottom: 0;
+  position: absolute;
+  left: 12px; top: 0; bottom: 0;
   width: 2px;
+  /* Garis gradasi dari atas ke bawah */
   background: linear-gradient(to bottom, #6C63FF, #FF6584, #43E97B);
 }
-.timeline-item { position: relative; margin-bottom: 40px; }
+
+/* Setiap item di timeline */
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Titik bulat di garis timeline */
 .timeline-dot {
-  position: absolute; left: -34px; top: 24px;
+  position: absolute;
+  left: -34px; top: 24px;
   width: 14px; height: 14px;
   border-radius: 50%;
-  border: 3px solid #0D0D1A;
-  box-shadow: 0 0 10px currentColor;
+  border: 3px solid #0D0D1A;    /* border warna background agar terlihat "bolong" */
+  box-shadow: 0 0 10px currentColor; /* glow sesuai warna titik */
 }
-.timeline-content { transition: transform 0.3s ease; }
-.timeline-content:hover { transform: translateX(5px); }
 
-/* ===== SOCIAL ICONS ===== */
-.social-icon { transition: transform 0.3s ease, color 0.3s ease; }
-.social-icon:hover { transform: translateY(-5px) scale(1.2); }
+/* Konten kartu timeline bergeser ke kanan saat hover */
+.timeline-content {
+  transition: transform 0.3s ease;
+}
+.timeline-content:hover {
+  transform: translateX(5px);
+}
 
-/* ===== PARTICLES ===== */
-#particles-canvas { opacity: 0.6; }
 
-/* ===== BACK TO TOP ===== */
+/* ============================================================
+   16. SOCIAL ICONS — Ikon sosial media naik saat hover
+   ============================================================ */
+.social-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.social-icon:hover {
+  transform: translateY(-5px) scale(1.2); /* naik dan membesar */
+}
+
+
+/* ============================================================
+   17. PARTICLES CANVAS — Canvas partikel di background
+   ============================================================ */
+#particles-canvas {
+  opacity: 0.6; /* sedikit transparan agar tidak terlalu mencolok */
+}
+
+
+/* ============================================================
+   18. BACK TO TOP BUTTON — Tombol kembali ke atas
+   ============================================================ */
 #back-to-top.visible {
   opacity: 1;
-  pointer-events: all;
+  pointer-events: all; /* bisa diklik saat visible */
 }
 
-/* ===== TYPED CURSOR BLINK ===== */
-#typed-cursor { animation: blink 0.8s infinite; }
+
+/* ============================================================
+   19. TYPED CURSOR — Garis kedip di samping teks yang diketik
+   ============================================================ */
+#typed-cursor {
+  animation: blink 0.8s infinite;
+}
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50%       { opacity: 0; } /* kedip: muncul-hilang-muncul */
 }
 
-/* ===== GLITCH EFFECT ===== */
-.glitch {
-  position: relative;
-  animation: glitch 3s infinite;
-}
-@keyframes glitch {
-  0%, 90%, 100% { transform: translate(0); }
-  92% { transform: translate(-2px, 1px); }
-  94% { transform: translate(2px, -1px); }
-  96% { transform: translate(-1px, 2px); }
-  98% { transform: translate(1px, -2px); }
-}
 
-/* ===== SCROLLBAR ===== */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #0D0D1A; }
-::-webkit-scrollbar-thumb { background: #6C63FF; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #FF6584; }
+/* ============================================================
+   20. SCROLLBAR — Kustomisasi tampilan scrollbar browser
+   ============================================================ */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #0D0D1A; }          /* jalur scrollbar */
+::-webkit-scrollbar-thumb { background: #6C63FF; border-radius: 3px; } /* pegangan */
+::-webkit-scrollbar-thumb:hover { background: #FF6584; }    /* warna saat hover */
 
-/* ===== SELECTION ===== */
-::selection { background: rgba(108,99,255,0.4); color: white; }
 
-/* ===== FORM INPUTS ===== */
-input:focus, textarea:focus {
-  box-shadow: 0 0 0 2px rgba(108,99,255,0.3);
+/* ============================================================
+   21. TEXT SELECTION — Warna saat teks di-select/highlight
+   ============================================================ */
+::selection {
+  background: rgba(108,99,255,0.4);
+  color: white;
 }
 
-/* ===== TILT CARD ===== */
-.tilt-card { transform-style: preserve-3d; transition: transform 0.1s ease; }
 
-/* ===== NOISE OVERLAY ===== */
+/* ============================================================
+   22. FORM INPUTS — Efek glow pada input saat fokus
+   ============================================================ */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(108,99,255,0.3); /* ring ungu tipis */
+}
+
+
+/* ============================================================
+   23. NOISE OVERLAY — Tekstur noise halus di seluruh halaman
+   ============================================================ */
+/* Menggunakan pseudo-element ::before pada body */
 body::before {
   content: '';
   position: fixed; inset: 0;
+  /* SVG inline yang menghasilkan tekstur noise */
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none; z-index: 1; opacity: 0.4;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.4;
 }
 
-/* ===== GLOW ORBS ===== */
+
+/* ============================================================
+   24. GLOW ORBS — Lingkaran cahaya blur di background
+   ============================================================ */
 .glow-orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(80px);       /* blur ekstrem agar terlihat seperti cahaya */
   pointer-events: none;
   z-index: 0;
   animation: orbFloat 8s ease-in-out infinite;
 }
+
+/* Posisi dan warna masing-masing orb */
 .orb-1 { width: 400px; height: 400px; background: rgba(108,99,255,0.15); top: -100px; right: -100px; }
-.orb-2 { width: 300px; height: 300px; background: rgba(255,101,132,0.1); bottom: 20%; left: -100px; animation-delay: -4s; }
-.orb-3 { width: 250px; height: 250px; background: rgba(67,233,123,0.08); top: 50%; right: 10%; animation-delay: -2s; }
+.orb-2 { width: 300px; height: 300px; background: rgba(255,101,132,0.1);  bottom: 20%; left: -100px; animation-delay: -4s; }
+.orb-3 { width: 250px; height: 250px; background: rgba(67,233,123,0.08);  top: 50%; right: 10%;     animation-delay: -2s; }
+
+/* Animasi melayang: bergerak sedikit ke berbagai arah */
 @keyframes orbFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -30px) scale(1.05); }
-  66% { transform: translate(-20px, 20px) scale(0.95); }
+  0%, 100% { transform: translate(0, 0)      scale(1); }
+  33%       { transform: translate(30px, -30px) scale(1.05); }
+  66%       { transform: translate(-20px, 20px) scale(0.95); }
 }
